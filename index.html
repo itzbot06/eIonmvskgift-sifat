@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win $5000 Instantly!</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0; height: 100%; overflow: hidden;
+            background-color: #000; font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        .wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            background: url('background.jpg.png') no-repeat center top;
+            background-size: contain;
+            overflow: hidden;
+        }
+
+        /* CLAIM NOW বাটন - পারফেক্ট সাইজ ও পজিশন */
+        .claim-btn {
+            position: absolute;
+            bottom: 35.5%; 
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72%;
+            height: 52px; 
+            background: linear-gradient(180deg, #ff4c00, #b30000);
+            border-radius: 50px;
+            text-decoration: none;
+            z-index: 1000;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            animation: pulse-glow 1.2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.02); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        .btn-text {
+            color: #fff; font-size: 20px; font-weight: 900;
+            text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* উন্নত টাইমার বক্স - নিচের স্লটে সেট করা */
+        .timer-box {
+            position: absolute;
+            bottom: 11%; /* একদম নিচের ফাঁকা বক্সে বসার জন্য */
+            width: 82%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 15, 15, 0.85);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .timer-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* লাইভ ইন্ডিকেটর ডট */
+        .live-dot {
+            width: 8px; height: 8px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #ff0000;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+        .timer-text {
+            color: #fff; font-size: 14px; font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* সময় শেষ হওয়ার ইন্ডিকেটর (Progress Bar) */
+        .indicator-bg {
+            width: 100%; height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .indicator-fill {
+            height: 100%; width: 100%;
+            background: linear-gradient(90deg, #00ff00, #ffcc00, #ff0000);
+            transition: width 1s linear;
+        }
+
+        /* মানি রেইন ইফেক্ট */
+        .money {
+            position: absolute; font-size: 18px;
+            z-index: 10; pointer-events: none;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper" id="main">
+        <a href="https://www.af9m8trk.com/RWG11EZJ/5JY122KX/?s1=Sifat" class="claim-btn">
+            <span class="btn-text">CLAIM NOW →</span>
+        </a>
+
+        <div class="timer-box">
+            <div class="timer-info">
+                <div class="live-dot"></div>
+                <div class="timer-text">Offer Expiring: <span id="time" style="color: #ffcc00;">05:00</span></div>
+            </div>
+            <div class="indicator-bg">
+                <div class="indicator-fill" id="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function spawn() {
+            const icons = ['💰', '💵', '$', '💸'];
+            const m = document.createElement('div');
+            m.className = 'money';
+            m.innerText = icons[Math.floor(Math.random() * icons.length)];
+            m.style.left = Math.random() * 100 + '%';
+            m.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.getElementById('main').appendChild(m);
+            setTimeout(() => m.remove(), 5000);
+        }
+        setInterval(spawn, 450);
+
+        function startTimer(duration) {
+            var timer = duration, minutes, seconds;
+            var display = document.querySelector('#time');
+            var bar = document.querySelector('#bar');
+            
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                display.textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                
+                var percent = (timer / duration) * 100;
+                bar.style.width = percent + "%";
+
+                if (--timer < 0) { timer = duration; }
+            }, 1000);
+        }
+        window.onload = function () { startTimer(300); };
+    </script>
+</body>
+</html>
