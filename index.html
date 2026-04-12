@@ -3,166 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win $5000 Instantly!</title>
+    <title>Win $500 Instantly!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            margin: 0; padding: 0; height: 100%; overflow: hidden;
-            background-color: #000; font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-        .wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            height: 100vh;
-            margin: 0 auto;
-            background: url('background.jpg.png') no-repeat center top;
-            background-size: contain;
-            overflow: hidden;
+        body {
+            margin: 0; padding: 0;
+            background-color: #010409;
+            font-family: 'Roboto', sans-serif;
+            color: #e6edf3;
+            display: flex; justify-content: center;
         }
 
-        /* CLAIM NOW বাটন - পারফেক্ট সাইজ ও পজিশন */
-        .claim-btn {
-            position: absolute;
-            bottom: 35.5%; 
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 72%;
-            height: 52px; 
-            background: linear-gradient(180deg, #ff4c00, #b30000);
-            border-radius: 50px;
-            text-decoration: none;
-            z-index: 1000;
-            -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            animation: pulse-glow 1.2s infinite;
-        }
-
-        @keyframes pulse-glow {
-            0% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.02); }
-            100% { transform: translateX(-50%) scale(1); }
-        }
-
-        .btn-text {
-            color: #fff; font-size: 20px; font-weight: 900;
-            text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        /* উন্নত টাইমার বক্স - নিচের স্লটে সেট করা */
-        .timer-box {
-            position: absolute;
-            bottom: 11%; /* একদম নিচের ফাঁকা বক্সে বসার জন্য */
-            width: 82%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(15, 15, 15, 0.85);
-            padding: 10px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
+        .container {
+            max-width: 420px; width: 100%;
+            padding: 15px;
             text-align: center;
         }
 
-        .timer-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 8px;
+        .top-star { color: #ffbc00; font-size: 20px; margin-top: 10px; }
+        .main-header {
+            color: #ffbc00; font-size: 22px; font-weight: 900;
+            margin: 5px 0 15px 0; text-transform: uppercase;
         }
 
-        /* লাইভ ইন্ডিকেটর ডট */
-        .live-dot {
-            width: 8px; height: 8px;
-            background-color: #ff0000;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #ff0000;
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-
-        .timer-text {
-            color: #fff; font-size: 14px; font-weight: bold;
-            letter-spacing: 0.5px;
+        /* প্রিমিয়াম স্ট্যান্ডার্ড মেটালিক কার্ড - অতিরিক্ত শাইন ছাড়া */
+        .offer-card {
+            background: linear-gradient(145deg, #0d1117 0%, #161b22 100%);
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
-        /* সময় শেষ হওয়ার ইন্ডিকেটর (Progress Bar) */
-        .indicator-bg {
-            width: 100%; height: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
+        .congrats-text {
+            color: #ffffff; font-size: 24px; font-weight: 900;
+            display: block; margin-bottom: 2px;
         }
-        .indicator-fill {
+        .eligible-text {
+            color: #ffbc00; font-size: 18px; font-weight: 700;
+            display: block; margin-bottom: 15px;
+        }
+
+        /* ছবি বক্সে নিখুঁতভাবে ফিট করার জন্য অ্যাডজাস্টমেন্ট */
+        .img-box {
+            width: 100%; height: 210px; /* ফিক্সড হাইট বক্স */
+            border-radius: 12px;
+            overflow: hidden; margin-bottom: 15px;
+            border: 1px solid #444c56;
+            background-color: #000;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .hero-img {
+            max-width: 100%; max-height: 100%;
+            width: auto; height: auto;
+            object-fit: contain; /* ছবি পুরোটা বক্সে দেখাবে, লেখা ফোকাস থাকবে */
+            display: block;
+        }
+
+        .progress-wrapper { margin-top: 5px; }
+        .progress-container {
+            width: 90%; height: 10px;
+            background: #21262d; border-radius: 10px;
+            margin: 0 auto 10px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .progress-fill {
             height: 100%; width: 100%;
-            background: linear-gradient(90deg, #00ff00, #ffcc00, #ff0000);
+            background: linear-gradient(90deg, #ff8c00, #ff0000);
+            box-shadow: 0 0 15px #ff4500;
             transition: width 1s linear;
         }
 
-        /* মানি রেইন ইফেক্ট */
-        .money {
-            position: absolute; font-size: 18px;
-            z-index: 10; pointer-events: none;
-            animation: fall linear forwards;
+        .timer-text {
+            color: #ffbc00; font-weight: 700; font-size: 15px;
+            display: flex; align-items: center; justify-content: center; gap: 5px;
         }
-        @keyframes fall {
-            0% { transform: translateY(-5vh) rotate(0deg); opacity: 0; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+
+        /* বাটন ডিজাইন - অতিরিক্ত চকচকে ভাব কমানো হয়েছে */
+        .btn-list { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+
+        .btn {
+            padding: 15px; border-radius: 50px;
+            text-decoration: none; color: white;
+            font-weight: 700; font-size: 14px;
+            text-transform: uppercase; display: flex; align-items: center;
+            justify-content: center; gap: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.2s;
+            position: relative; overflow: hidden;
+            /* স্ট্যান্ডার্ড শাইন */
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 4px 10px rgba(0,0,0,0.4);
         }
+
+        /* বাটনের গ্লসি লাইট ইফেক্ট কমিয়ে দেওয়া হয়েছে */
+        .btn::after {
+            content: ''; position: absolute; top: 0; left: -50%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+        }
+        .btn:hover::after { left: 150%; }
+
+        .btn-orange { background: linear-gradient(180deg, #ff9500, #ff5e00); }
+        .btn-dark-orange { background: linear-gradient(180deg, #ff6a00, #e62e00); }
+        .btn-blue { background: linear-gradient(180deg, #3399ff, #0055ff); }
+        .btn-green { background: linear-gradient(180deg, #44cc44, #119911); }
+        .btn-pink { background: linear-gradient(180deg, #ff66aa, #ee1188); }
+
+        .btn:active { transform: translateY(2px); box-shadow: inset 0 2px 5px rgba(0,0,0,0.3); }
+
+        .info-box {
+            background: #0d1117; border-radius: 15px;
+            padding: 20px; margin-top: 25px; text-align: left;
+            border: 1px solid #30363d;
+        }
+        .info-box h2 { font-size: 19px; margin: 0 0 10px 0; color: #fff; }
+        .info-box p { color: #8b949e; font-size: 14px; line-height: 1.6; }
+
     </style>
 </head>
 <body>
 
-    <div class="wrapper" id="main">
-        <a href="https://www.af9m8trk.com/RWG11EZJ/5JY122KX/?s1=Sifat" class="claim-btn">
-            <span class="btn-text">CLAIM NOW →</span>
-        </a>
+<div class="container">
+    <div class="top-star">★</div>
+    <h1 class="main-header">Win $500 Instantly!</h1>
 
-        <div class="timer-box">
-            <div class="timer-info">
-                <div class="live-dot"></div>
-                <div class="timer-text">Offer Expiring: <span id="time" style="color: #ffcc00;">05:00</span></div>
+    <div class="offer-card">
+        <span class="congrats-text">Congratulations!</span>
+        <span class="eligible-text">You Are Eligible</span>
+        
+        <div class="img-box">
+            <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat">
+                <img src="hero.png" class="hero-img" alt="Official Offer Image">
+            </a>
+        </div>
+
+        <div class="progress-wrapper">
+            <div class="progress-container">
+                <div id="bar" class="progress-fill"></div>
             </div>
-            <div class="indicator-bg">
-                <div class="indicator-fill" id="bar"></div>
-            </div>
+            <div class="timer-text">🔥 Offer ends in <span id="timer">03:30</span> ⌛</div>
         </div>
     </div>
 
-    <script>
-        function spawn() {
-            const icons = ['💰', '💵', '$', '💸'];
-            const m = document.createElement('div');
-            m.className = 'money';
-            m.innerText = icons[Math.floor(Math.random() * icons.length)];
-            m.style.left = Math.random() * 100 + '%';
-            m.style.animationDuration = (Math.random() * 2 + 3) + 's';
-            document.getElementById('main').appendChild(m);
-            setTimeout(() => m.remove(), 5000);
-        }
-        setInterval(spawn, 450);
+    <div class="btn-list">
+        <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat" class="btn btn-orange">💰 CLAIM NOW $450 💰</a>
+        <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat" class="btn btn-dark-orange">🔥 OTHER SPECIAL OFFERS 🔥</a>
+        <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat" class="btn btn-blue">💸 GET $350 CASH APP NOW!</a>
+        <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat" class="btn btn-green">💵 GET $500 CASH TO YOUR ACCOUNT</a>
+        <a href="https://www.af9m8trk.com/RWG11EZJ/SUM122L1/?s1=Sifat" class="btn btn-pink">🎁 $100 TACO BELL GIFT CARD!</a>
+    </div>
 
-        function startTimer(duration) {
-            var timer = duration, minutes, seconds;
-            var display = document.querySelector('#time');
-            var bar = document.querySelector('#bar');
-            
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-                display.textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-                
-                var percent = (timer / duration) * 100;
-                bar.style.width = percent + "%";
+    <div class="info-box">
+        <h2>🚀 Don't Miss Your Chance!</h2>
+        <p>This is your ultimate moment to win big! Join thousands of verified winners already enjoying instant cash rewards. By clicking <strong>CLAIM NOW</strong>, you secure your exclusive spot for cash prizes, gift cards, and premium bonuses.</p>
+        <p>Don't let someone else take your spot. Every second counts! Be smart, act quickly, and unlock your exclusive $5,000 reward before time runs out. 🔥</p>
+    </div>
+</div>
 
-                if (--timer < 0) { timer = duration; }
-            }, 1000);
-        }
-        window.onload = function () { startTimer(300); };
-    </script>
+<script>
+    let time = 210;
+    const total = 210;
+    const timerEl = document.getElementById('timer');
+    const barEl = document.getElementById('bar');
+
+    setInterval(() => {
+        let m = Math.floor(time / 60);
+        let s = time % 60;
+        timerEl.innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        barEl.style.width = (time / total) * 100 + '%';
+        if (time > 0) time--;
+    }, 1000);
+</script>
+
 </body>
 </html>
