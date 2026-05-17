@@ -2,129 +2,471 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Win $5000 Instantly - Cash App Offer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Global Giveaway</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            overflow: hidden;
-            background-color: #000;
+            box-sizing: border-box;
+            font-family: 'Impact', 'Arial Black', sans-serif;
         }
 
-        .landing-container {
-            background-image: url('trial.png'); 
-            background-size: cover;
-            background-position: center top;
-            height: 100vh;
-            width: 100vw;
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #9cd5c3; 
+            background: radial-gradient(circle at center, #d5efe6 0%, #7dbda9 100%);
+            background-attachment: fixed;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; 
             align-items: center;
-            text-align: center;
-            color: #d1d1d1; /* ব্রাইটনেস কমানো হয়েছে */
+            justify-content: flex-start;
             position: relative;
+            overflow-x: hidden;
         }
 
-        .content-overlay {
-            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.95) 100%);
+        /* --- Background Permanent Money Elements --- */
+        .static-money-bg {
             position: absolute;
-            bottom: 0;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 60%; 
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
             z-index: 1;
         }
-
-        .cta-content {
-            position: relative;
-            z-index: 10;
-            width: 95%; /* এক লাইনে হেডলাইন ফিট করার জন্য একটু বাড়ানো হয়েছে */
-            max-width: 450px;
-            margin-bottom: 85px; 
+        .bg-bill {
+            position: absolute;
+            width: 75px;
+            height: 38px;
+            background: linear-gradient(135deg, #abbfa3 0%, #90a986 100%);
+            border: 1px dashed rgba(60, 90, 50, 0.4);
+            border-radius: 2px;
+            opacity: 0.45;
+            box-shadow: 2px 5px 10px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: rgba(40, 65, 30, 0.5);
         }
+        .bill-1 { top: 12%; left: -15px; transform: rotate(45deg); }
+        .bill-2 { top: 20%; right: -20px; transform: rotate(-30deg); }
+        .bill-3 { top: 45%; left: -30px; transform: rotate(-60deg); }
+        .bill-4 { top: 68%; right: -10px; transform: rotate(25deg); }
+        .bill-5 { top: 52%; left: 35%; transform: rotate(15deg); opacity: 0.2; }
 
-        h1 {
-            font-size: 1.8rem; /* এক লাইনে আনার জন্য ফন্ট ছোট করা হয়েছে */
-            font-weight: 900;
-            margin: 0 0 10px 0;
+        /* --- Top Bar --- */
+        .top-bar {
+            background: linear-gradient(180deg, #2b495e 0%, #192e3d 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 16px 10px;
+            font-size: 17px;
+            font-weight: bold;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            color: #e0e0e0; /* উজ্জ্বলতা কমানো হয়েছে */
-            text-shadow: 2px 2px 10px rgba(0,0,0,1);
-            white-space: nowrap; /* লেখা যেন ২ লাইনে না যায় */
+            width: 100%;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            font-family: 'Arial', sans-serif;
         }
 
-        p {
-            font-size: 0.95rem;
-            margin: 0 0 25px 0;
-            color: #b0b0b0; /* সাব-টেক্সট আরও ডার্ক করা হয়েছে */
-            font-weight: 500;
-            text-shadow: 1px 1px 5px rgba(0,0,0,1);
+        /* --- Main Container --- */
+        .main-container {
+            width: 100%;
+            max-width: 414px;
+            padding: 20px 22px;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
-        /* বাটনের ব্রাইটনেস কমানো এবং অ্যানিমেশন */
-        .claim-btn {
-            background-color: #00a326; /* ডার্ক গ্রিন */
-            color: #eeeeee;
-            padding: 16px;
+        .main-headline {
+            font-size: 42px;
+            font-weight: 900;
+            color: #212121;
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            text-shadow: 0px 2px 2px rgba(255,255,255,0.8);
+        }
+
+        /* --- Middle Section --- */
+        .middle-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.45);
+            padding: 10px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        
+        .icon-area {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .timer-area {
+            width: 62%;
+            text-align: left;
+        }
+        
+        .timer-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #111111;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-family: Arial, sans-serif;
+        }
+        
+        .timer-wrapper {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        
+        .time-box {
+            background: linear-gradient(180deg, #7c7c7c 0%, #555555 100%);
+            color: #ffffff;
+            border-radius: 6px;
+            min-width: 46px;
+            padding: 8px 0;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+        }
+        
+        .time-digits {
             font-size: 20px;
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             display: block;
-            width: 100%;
-            box-sizing: border-box;
-            border: 1px solid rgba(255,255,255,0.3); /* বর্ডার ব্রাইটনেস কমানো */
+            line-height: 1;
+        }
+        
+        .time-label {
+            font-size: 9px;
+            color: #d1d1d1;
             text-transform: uppercase;
-            
-            /* লাফালাফি অ্যানিমেশন শুরু */
-            animation: pulse-animation 2s infinite;
+            margin-top: 3px;
+            display: block;
+            font-family: Arial, sans-serif;
         }
-
-        @keyframes pulse-animation {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
-        .claim-btn:active {
-            transform: scale(0.95);
-            animation: none;
-        }
-
-        .live-payment-feed {
-            font-size: 0.8rem;
-            color: #008a20; /* পেমেন্ট ফীড আরও ডার্ক করা হয়েছে */
-            margin-top: 15px;
+        
+        .timer-colon {
+            font-size: 22px;
             font-weight: bold;
+            color: #444444;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; } /* মোবাইলে এক লাইনে রাখার জন্য আরও ছোট */
-            .claim-btn { font-size: 18px; padding: 14px; }
-            .cta-content { margin-bottom: 75px; }
+        .notice-tag {
+            background: linear-gradient(180deg, #423930 0%, #26211c 100%);
+            color: #ecc37a;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 7px 0;
+            border-radius: 25px;
+            width: 100%;
+            display: block;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        /* --- Progress Bar Container --- */
+        .progress-container {
+            width: 100%;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .progress-text-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 6px;
+        }
+
+        .progress-label {
+            font-size: 16px;
+            font-weight: 900;
+            color: #1f2937;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .spots-left {
+            font-size: 15px;
+            font-weight: 900;
+            color: #dc2626;
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-align: right;
+        }
+
+        .bar-bg {
+            width: 100%;
+            height: 20px;
+            background: #111827; 
+            border-radius: 12px;
+            padding: 3px;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.6);
+            margin-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            width: 85%;
+            background: linear-gradient(90deg, #059669 0%, #10b981 50%, #34d399 100%); 
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.7), inset 0 2px 3px rgba(255,255,255,0.4);
+            position: relative;
+            background-size: 35px 35px;
+            background-image: linear-gradient(
+                135deg, 
+                rgba(255, 230, 150, 0.45) 25%, 
+                transparent 25%, 
+                transparent 50%, 
+                rgba(255, 230, 150, 0.45) 50%, 
+                rgba(255, 230, 150, 0.45) 75%, 
+                transparent 75%, 
+                transparent
+            );
+            animation: animate-stripes 1.2s linear infinite;
+        }
+
+        @keyframes animate-stripes {
+            0% { background-position: 0 0; }
+            100% { background-position: 35px 0; }
+        }
+
+        .counter-subtext {
+            font-size: 14px;
+            font-weight: bold;
+            color: #374151;
+            text-align: center;
+            display: block;
+            margin-top: 3px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- Claim Button (More Vibrant Green Style) --- */
+        .btn-silver-fixed {
+            background: linear-gradient(180deg, #cef2d3 0%, #89dc95 45%, #50b860 100%); 
+            border: 2px solid #0f5119; 
+            border-radius: 14px;
+            width: 100%;
+            padding: 11px 14px; 
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.15), inset 0 2px 3px rgba(255,255,255,0.8);
+            position: relative;
+            overflow: hidden;
+            animation: button-pulse 1.8s infinite ease-in-out; 
+        }
+
+        .btn-silver-fixed::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: button-shimmer 2.5s infinite linear;
+        }
+        
+        .claim-word {
+            font-size: 28px; 
+            font-weight: 900;
+            color: #0c2310;
+            padding-right: 14px;
+            border-right: 2px solid #439351;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.7);
+        }
+        
+        .claim-text-area {
+            padding-left: 14px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .crown-icon {
+            margin-bottom: 1px;
+            align-self: flex-start;
+        }
+        
+        .claim-text {
+            font-size: 16px; 
+            font-weight: bold;
+            color: #0c2310;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        @keyframes button-pulse {
+            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+            50% { transform: scale(1.02); box-shadow: 0 8px 25px rgba(80, 184, 96, 0.35); }
+            100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        }
+
+        @keyframes button-shimmer {
+            0% { left: -60%; }
+            30% { left: 140%; }
+            100% { left: 140%; }
+        }
+
+        /* --- Footer --- */
+        .footer-section {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            font-family: Arial, sans-serif;
+        }
+        .cpa-badge {
+            background-color: #1e293b;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .footer-desc {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.4;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="landing-container">
-        <div class="content-overlay"></div>
+    <div class="static-money-bg">
+        <div class="bg-bill bill-1">$</div>
+        <div class="bg-bill bill-2">$</div>
+        <div class="bg-bill bill-3">$</div>
+        <div class="bg-bill bill-4">$</div>
+        <div class="bg-bill bill-5">$</div>
+    </div>
+
+    <div class="top-bar">OFFICIAL GLOBAL GIVEAWAY</div>
+
+    <div class="main-container">
         
-        <div class="cta-content">
-            <h1>WIN $5000 INSTANTLY!</h1>
-            <p>Limited Slots Available! Claim Your Reward Securely.</p>
-            
-            <a href="https://www.af9m8trk.com/MPC116ZQ/5JY122KX/?s1=Sifat" class="claim-btn">CLAIM NOW 🔒</a>
-            
-            <div class="live-payment-feed">
-                ● Live: User ******4 claimed $5000 in TX!
+        <h1 class="main-headline">
+            CLAIM CASH 💸<br>$5,000 INSTANTLY
+        </h1>
+
+        <div class="middle-section">
+            <div class="icon-area">
+                <svg width="45" height="30" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+                <svg width="65" height="38" viewBox="0 0 24 24" style="margin-top: 4px;">
+                    <rect x="1" y="7" width="20" height="11" rx="1.5" fill="#475569" transform="rotate(-5 10 12)"/>
+                    <rect x="2" y="6" width="20" height="11" rx="1.5" fill="#64748b" transform="rotate(-2 10 12)"/>
+                    <rect x="3" y="5" width="20" height="11" rx="1.5" fill="#94a3b8"/>
+                    <rect x="5" y="7" width="16" height="7" rx="1" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+                    <circle cx="13" cy="10" r="2.5" fill="#cbd5e1"/>
+                    <text x="11.5" y="12" font-size="6" font-weight="bold" fill="#475569">$</text>
+                </svg>
             </div>
+
+            <div class="timer-area">
+                <p class="timer-title">Time Remaining:</p>
+                <div class="timer-wrapper">
+                    <div class="time-box"><span class="time-digits" id="days">02</span><span class="time-label">Days:</span></div>
+                    <div class="timer-colon">:</div>
+                    <div class="time-box"><span class="time-digits" id="mins">45</span><span class="time-label">Mins:</span></div>
+                    <div class="timer-colon">:</div>
+                    <div class="time-box"><span class="time-digits" id="secs">12</span><span class="time-label">Secs</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notice-tag">Entries Filling Fast - Act Now!</div>
+
+        <div class="progress-container">
+            <div class="progress-text-row">
+                <span class="progress-label">Rewards Claimed</span>
+                <span class="spots-left">Only 569 Spots<br>Left Today!</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill"></div>
+            </div>
+            <span class="counter-subtext">9,431 / 10,000</span>
+        </div>
+
+        <div class="btn-silver-fixed" onclick="goToOffer()">
+            <div class="claim-word">Claim</div>
+            <div class="claim-text-area">
+                <svg class="crown-icon" width="28" height="18" viewBox="0 0 24 24" fill="#0c2310">
+                    <path d="M2 22h20v-2H2v2zm1-4l2.5-7 4.5 4 2-9 2 9 4.5-4 2.5 7H3z"/>
+                    <circle cx="12" cy="1" r="1"/>
+                    <circle cx="3" cy="7" r="1"/>
+                    <circle cx="21" cy="7" r="1"/>
+                </svg>
+                <div class="claim-text">Claim Your<br>Cash Prize Now!</div>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <span class="cpa-badge">HELLO !</span>
+            <p class="footer-desc">
+                Exclusive High Offer: Don't let someone else take your spot. Every second counts! Be smart, act quickly, and unlock your exclusive $5,000 reward before time runs out. 🔥
+            </p>
         </div>
     </div>
 
+    <script>
+        let totalSeconds = (2 * 24 * 3600) + (45 * 60) + 12;
+        function updateTimer() {
+            if(totalSeconds <= 0) totalSeconds = 200000;
+            totalSeconds--;
+            let d = Math.floor(totalSeconds / (3600*24));
+            let m = Math.floor((totalSeconds % (3600*24)) / 60) % 60;
+            let s = totalSeconds % 60;
+            document.getElementById('days').innerText = d < 10 ? '0'+d : d;
+            document.getElementById('mins').innerText = m < 10 ? '0'+m : m;
+            document.getElementById('secs').innerText = s < 10 ? '0'+s : s;
+        }
+        setInterval(updateTimer, 1000);
+
+        // কোডের ঠিক এই লাইনে "YOUR_CPA_OFFER_LINK_HERE" কেটে তোর অফার লিংক বসা
+        function goToOffer() {
+            window.location.href = "https://www.af9m8trk.com/MPC116ZQ/5JY122KX/?s1=Sifat";
+        }
+    </script>
 </body>
 </html>
+
